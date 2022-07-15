@@ -7,7 +7,7 @@ export const isFullScreenAvailable =
   false;
 
 // 进入全屏
-export const requestFull = (element) => {
+export const intoFullScreen = (element) => {
   // 判断各种浏览器，找到正确的方法
   const requestMethod =
     element.requestFullscreen || // W3C
@@ -27,7 +27,7 @@ export const requestFull = (element) => {
 };
 
 //退出全屏
-export const exitFull = () => {
+export const outFullScreen = () => {
   // 判断各种浏览器，找到正确的方法
   const exitMethod =
     document.exitFullscreen || // W3C

@@ -19,5 +19,4 @@ const onRouteBefore = ({ pathname, meta }) => {
   // }
 };
 
-// export { routes, onRouteBefore };
-export { routes };
+export { routes, onRouteBefore };

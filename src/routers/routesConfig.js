@@ -1,11 +1,18 @@
-import Home from "views/home/index";
+import React, { lazy } from "react";
+import { Outlet } from "react-router-dom";
+import Layout from "layout";
+const Home = lazy(() => import("views/home/index"));
 
 // 全局路由配置
 const routes = [
   {
     path: "/",
-    // redirect: "/home",
-    element: <Home />,
+    redirect: "/home",
+    element: (
+      <Layout>
+        <Outlet />
+      </Layout>
+    ),
     children: [
       { path: "messages", element: <div>message</div> },
       { path: "tasks", element: <div>tasks</div> },
