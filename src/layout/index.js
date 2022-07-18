@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from "react";
 import { Layout as LayoutAnt } from "antd";
 import { useRecoilValue } from "recoil";
 import { isFullScreenStore } from "store";
-import { intoFullScreen, outFullScreen } from "utils";
+import { intoFullScreen, autoPrefix } from "utils";
 import Header from "./header";
 import Sidebar from "./sidebar/index";
-import "./index.less";
+import styles from "./index.less";
 
-const { Content } = LayoutAnt;
+const cx = autoPrefix(styles.prefix);
 
 const Layout = (props) => {
   const contentRef = useRef(null);
@@ -24,19 +24,19 @@ const Layout = (props) => {
   }, [isFullScreen]);
 
   return (
-    <LayoutAnt id="Layout" className="layout-container">
+    <LayoutAnt id="Layout" className={cx("container")}>
       <Header />
       <LayoutAnt>
         <Sidebar />
-        <Content
+        <LayoutAnt.Content
           style={{
             minHeight: 280,
           }}
         >
-          <div className="layout-content" ref={contentRef}>
+          <div className={cx("content")} ref={contentRef}>
             {props.children}
           </div>
-        </Content>
+        </LayoutAnt.Content>
       </LayoutAnt>
     </LayoutAnt>
   );

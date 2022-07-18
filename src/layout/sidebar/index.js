@@ -6,9 +6,6 @@ import { useRecoilValue } from "recoil";
 import { collapsedStore } from "store";
 import "./index.less";
 
-const { Sider } = Layout;
-const { Item } = Menu;
-
 const menuData = [
   { key: "home", title: "首页", path: "/home", icon: <HomeOutlined /> },
   { key: "about", title: "关于作者", path: "/about", icon: <UserOutlined /> },
@@ -26,6 +23,7 @@ const Sidebar = () => {
         (menuDataItem) => menuDataItem.path === location.pathname
       ) || {}
     ).key || "home";
+
   const [selectedKeys, setSelectedKeys] = useState([currentPathKey]);
 
   const onSelectedKeysChange = ({ key }) => {
@@ -34,7 +32,7 @@ const Sidebar = () => {
   };
 
   return (
-    <Sider
+    <Layout.Sider
       className="sidebar-container"
       width={144}
       collapsedWidth={64}
@@ -50,13 +48,13 @@ const Sidebar = () => {
       >
         {(menuData || []).map((menuDataItem) => {
           return (
-            <Item key={menuDataItem.key} icon={menuDataItem.icon}>
+            <Menu.Item key={menuDataItem.key} icon={menuDataItem.icon}>
               {menuDataItem.title}
-            </Item>
+            </Menu.Item>
           );
         })}
       </Menu>
-    </Sider>
+    </Layout.Sider>
   );
 };
 

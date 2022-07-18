@@ -4,4 +4,6 @@ import {
   outFullScreen,
 } from "./fullScreen";
 
-export { isFullScreenAvailable, intoFullScreen, outFullScreen };
+import { autoPrefix } from "./style";
+
+export { isFullScreenAvailable, intoFullScreen, outFullScreen, autoPrefix };
