@@ -24,8 +24,8 @@ export const signUp = (data) => {
 export const getUser = (data) => {
   return service({
     url: `${urlPrefix}/user/information`,
-    method: "post",
-    data,
+    method: "get",
+    params: data,
   });
 };
 

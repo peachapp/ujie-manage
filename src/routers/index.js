@@ -1,4 +1,4 @@
-import routes from "./routesConfig";
+import routes from "./config";
 
 /**
  * @description: 全局路由拦截

@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { signIn } from "api/login";
+import { signIn, getUser } from "api/login";
 
 function Test() {
   const fn = async () => {
     const res = await signIn();
-    console.log("res", res);
+    const res2 = await getUser();
+    console.log("res", res, res2);
   };
   useEffect(() => {
     fn();

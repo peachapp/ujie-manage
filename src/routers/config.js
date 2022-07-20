@@ -9,6 +9,7 @@ const AboutAuthor = lazy(() => import("views/about/aboutAuthor"));
 // 全局路由配置
 const routes = [
   {
+    id: "/",
     path: "/",
     redirect: "/home",
     element: (
@@ -17,18 +18,19 @@ const routes = [
       </Layout>
     ),
     children: [
-      {
-        path: "/home",
-        element: <Home />,
-        meta: {
-          title: "首页",
-          needLogin: true,
-        },
-      },
-      { path: "tasks", element: <div>tasks</div> },
+      // {
+      //   path: "/home",
+      //   element: <Home />,
+      //   meta: {
+      //     title: "首页",
+      //     needLogin: true,
+      //   },
+      // },
+      // { path: "tasks", element: <div>tasks</div> },
     ],
   },
   {
+    id: "login",
     path: "/login",
     element: <Login />,
     meta: {
@@ -37,6 +39,7 @@ const routes = [
     },
   },
   {
+    id: "aboutAuthor",
     path: "/aboutAuthor",
     element: <AboutAuthor />,
     meta: {
@@ -45,6 +48,7 @@ const routes = [
     },
   },
   {
+    id: "test",
     path: "/test",
     element: <Test />,
     meta: {

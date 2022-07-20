@@ -6,4 +6,12 @@ import {
 
 import { autoPrefix } from "./style";
 
-export { isFullScreenAvailable, intoFullScreen, outFullScreen, autoPrefix };
+import { menuListAll } from "./menus";
+
+export {
+  isFullScreenAvailable,
+  intoFullScreen,
+  outFullScreen,
+  autoPrefix,
+  menuListAll,
+};
