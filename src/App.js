@@ -19,7 +19,7 @@ function App() {
       element: <UnknownEle />,
       meta: {
         title: item.meta.title,
-        needLogin: item.meta.needLogin,
+        auth: item.meta.auth,
       },
     });
   });

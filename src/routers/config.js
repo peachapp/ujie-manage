@@ -1,10 +1,15 @@
 import React, { lazy } from "react";
 import { Outlet } from "react-router-dom";
 import Layout from "layout";
-const Home = lazy(() => import("views/home"));
+// const Home = lazy(() => import("views/home"));
 const Login = lazy(() => import("views/login"));
 const Test = lazy(() => import("views/test"));
 const AboutAuthor = lazy(() => import("views/about/aboutAuthor"));
+
+// 静态页
+const Page403 = lazy(() => import("views/static/page403"));
+const Page404 = lazy(() => import("views/static/page404"));
+const Page500 = lazy(() => import("views/static/page500"));
 
 // 全局路由配置
 const routes = [
@@ -23,10 +28,9 @@ const routes = [
       //   element: <Home />,
       //   meta: {
       //     title: "首页",
-      //     needLogin: true,
+      //     auth: true,
       //   },
       // },
-      // { path: "tasks", element: <div>tasks</div> },
     ],
   },
   {
@@ -35,7 +39,7 @@ const routes = [
     element: <Login />,
     meta: {
       title: "登录",
-      needLogin: false,
+      auth: false,
     },
   },
   {
@@ -44,7 +48,7 @@ const routes = [
     element: <AboutAuthor />,
     meta: {
       title: "关于作者",
-      needLogin: false,
+      auth: false,
     },
   },
   {
@@ -53,16 +57,39 @@ const routes = [
     element: <Test />,
     meta: {
       title: "测试",
-      needLogin: false,
+      auth: false,
+    },
+  },
+  {
+    id: "403",
+    path: "/403",
+    element: <Page403 />,
+    meta: {
+      title: "403",
+      auth: false,
+    },
+  },
+  {
+    id: "404",
+    path: "/404",
+    element: <Page404 />,
+    meta: {
+      title: "404",
+      auth: false,
+    },
+  },
+  {
+    id: "500",
+    path: "/500",
+    element: <Page500 />,
+    meta: {
+      title: "500",
+      auth: false,
     },
   },
   // {
   //   path: "*",
-  //   component: () =>
-  //     import(/* webpackChunkName: "404" */ "views/static/page404"),
-  //   meta: {
-  //     title: "404",
-  //   },
+  //   redirect: "404",
   // },
 ];
 

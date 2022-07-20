@@ -8,7 +8,6 @@ export const menuListAll = [
     meta: {
       title: "首页",
       icon: "HomeOutlined",
-      needLogin: true,
       auth: "",
       isMenu: true,
       isShow: true,

@@ -12,7 +12,7 @@ const onRouteBefore = ({ pathname, meta }) => {
     document.title = meta.title;
   }
   // 判断未登录跳转登录页
-  // if (meta.needLogin) {
+  // if (meta.auth) {
   //   if (!isLogin) {
   //     return "/login";
   //   }
