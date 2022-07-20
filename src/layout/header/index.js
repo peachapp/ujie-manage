@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout as LayoutAnt } from "antd";
+import { Layout } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -7,10 +7,10 @@ import {
 } from "@ant-design/icons";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { isFullScreenStore, collapsedStore } from "store";
-import { isFullScreenAvailable } from "utils";
-import "./index.less";
+import { isFullScreenAvailable, autoPrefix } from "utils";
+import styles from "./index.less";
 
-const { Header: HeaderAnt } = LayoutAnt;
+const cx = autoPrefix(styles.prefix);
 
 const Header = () => {
   const [collapsed, setCollapsed] = useRecoilState(collapsedStore);
@@ -24,20 +24,20 @@ const Header = () => {
   };
 
   return (
-    <HeaderAnt className="header-container" style={{ padding: 0 }}>
-      <div className="header-control" onClick={onCollapsedChange}>
+    <Layout.Header className={cx("container")} style={{ padding: 0 }}>
+      <div className={cx("control")} onClick={onCollapsedChange}>
         {collapsed ? (
-          <MenuUnfoldOutlined className="header-control-icon" />
+          <MenuUnfoldOutlined className={cx("control-icon")} />
         ) : (
-          <MenuFoldOutlined className="header-control-icon" />
+          <MenuFoldOutlined className={cx("control-icon")} />
         )}
       </div>
       {isFullScreenAvailable ? (
-        <div className="header-screen" onClick={onIsFullScreenChange}>
-          <FullscreenOutlined className="header-screen-icon" />
+        <div className={cx("screen")} onClick={onIsFullScreenChange}>
+          <FullscreenOutlined className={cx("screen-icon")} />
         </div>
       ) : null}
-    </HeaderAnt>
+    </Layout.Header>
   );
 };
 

@@ -4,7 +4,10 @@ import { Layout, Menu } from "antd";
 import { HomeOutlined, UserOutlined } from "@ant-design/icons";
 import { useRecoilValue } from "recoil";
 import { collapsedStore } from "store";
-import "./index.less";
+import { autoPrefix } from "utils";
+import styles from "./index.less";
+
+const cx = autoPrefix(styles.prefix);
 
 const menuData = [
   { key: "home", title: "首页", path: "/home", icon: <HomeOutlined /> },
@@ -33,7 +36,7 @@ const Sidebar = () => {
 
   return (
     <Layout.Sider
-      className="sidebar-container"
+      className={cx("container")}
       width={144}
       collapsedWidth={64}
       trigger={null}
