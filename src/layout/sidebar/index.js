@@ -11,7 +11,12 @@ const cx = autoPrefix(styles.prefix);
 
 const menuData = [
   { key: "home", title: "首页", path: "/home", icon: <HomeOutlined /> },
-  { key: "about", title: "关于作者", path: "/about", icon: <UserOutlined /> },
+  {
+    key: "aboutAuthor",
+    title: "关于作者",
+    path: "/aboutAuthor",
+    icon: <UserOutlined />,
+  },
   // { key: '404', title: '404', path: '', icon: '' },
 ];
 

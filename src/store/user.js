@@ -4,11 +4,6 @@ import { menuListAll } from "utils";
 
 // key 全局下保持唯一性
 
-export const isFullScreenStore = atom({
-  key: "isFullScreen",
-  default: false,
-});
-
 export const collapsedStore = atom({
   key: "collapsed",
   default: false,

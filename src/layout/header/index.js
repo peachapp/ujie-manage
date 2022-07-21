@@ -5,22 +5,18 @@ import {
   MenuFoldOutlined,
   FullscreenOutlined,
 } from "@ant-design/icons";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { isFullScreenStore, collapsedStore } from "store";
+import { useRecoilState } from "recoil";
+import { collapsedStore } from "store";
 import { isFullScreenAvailable, autoPrefix } from "utils";
 import styles from "./index.less";
 
 const cx = autoPrefix(styles.prefix);
 
-const Header = () => {
+const Header = (props) => {
+  const { onFullScreenOpen } = props;
   const [collapsed, setCollapsed] = useRecoilState(collapsedStore);
   const onCollapsedChange = () => {
     setCollapsed(!collapsed);
-  };
-
-  const setFullScreen = useSetRecoilState(isFullScreenStore);
-  const onIsFullScreenChange = () => {
-    setFullScreen(true);
   };
 
   return (
@@ -33,7 +29,7 @@ const Header = () => {
         )}
       </div>
       {isFullScreenAvailable ? (
-        <div className={cx("screen")} onClick={onIsFullScreenChange}>
+        <div className={cx("screen")} onClick={onFullScreenOpen}>
           <FullscreenOutlined className={cx("screen-icon")} />
         </div>
       ) : null}
