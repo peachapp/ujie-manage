@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import Layout from "layout";
 // const Home = lazy(() => import("views/home"));
 const Login = lazy(() => import("views/login"));
@@ -87,10 +87,10 @@ const routes = [
       auth: false,
     },
   },
-  // {
-  //   path: "*",
-  //   redirect: "404",
-  // },
+  {
+    path: "*",
+    element: <Navigate replace to="404"></Navigate>,
+  },
 ];
 
 export default routes;
