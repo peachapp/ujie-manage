@@ -9,6 +9,11 @@ export const collapsedStore = atom({
   default: false,
 });
 
+export const tokenStore = atom({
+  key: "token",
+  default: "",
+});
+
 export const menusStore = atom({
   key: "menus",
   default: cloneDeep(menuListAll),

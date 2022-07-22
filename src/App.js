@@ -4,7 +4,6 @@ import { useRecoilValue } from "recoil";
 import { menusStore } from "store";
 import { cloneDeep } from "lodash";
 import { routes } from "routers";
-// import logo from "logo.svg";
 import "./App.less";
 
 function App() {

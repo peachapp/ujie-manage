@@ -71,7 +71,7 @@ const PassInput = (props) => {
       nextPasswords.push(valueArr[i] || "");
     }
     setPasswords(nextPasswords);
-  }, [value]);
+  }, [value, setPasswords]);
 
   return (
     <div className={cx("container")} style={{ width }}>
