@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTimeout } from "ahooks";
+import PropTypes from "prop-types";
 import { Spin, Image, Button } from "antd";
 import QRCode from "qrcode";
 // relative
@@ -8,10 +9,7 @@ import styles from "./index.less";
 
 const cx = autoPrefix(styles.prefix);
 
-const Qrcode = (props) => {
-  // props
-  const { width, height, value, timeout, refresh } = props;
-
+const Qrcode = ({ width = 200, height, value, timeout, refresh }) => {
   // state
   const [loading, setLoading] = useState(false);
   const [url, setUrl] = useState("");
@@ -69,5 +67,15 @@ const Qrcode = (props) => {
     </Spin>
   );
 };
+
+QRCode.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.string.isRequired,
+  timeout: PropTypes.number,
+  refresh: PropTypes.func,
+};
+
+console.log("QRCode", QRCode, PropTypes);
 
 export default React.memo(Qrcode);
