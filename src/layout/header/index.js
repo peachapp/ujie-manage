@@ -5,19 +5,13 @@ import {
   MenuFoldOutlined,
   FullscreenOutlined,
 } from "@ant-design/icons";
-import { useRecoilState } from "recoil";
-import { collapsedStore } from "store";
 import { isFullScreenAvailable, autoPrefix } from "utils";
 import styles from "./index.less";
 
 const cx = autoPrefix(styles.prefix);
 
 const Header = (props) => {
-  const { onFullScreenOpen } = props;
-  const [collapsed, setCollapsed] = useRecoilState(collapsedStore);
-  const onCollapsedChange = () => {
-    setCollapsed(!collapsed);
-  };
+  const { collapsed, onCollapsedChange, onFullScreenOpen } = props;
 
   return (
     <Layout.Header className={cx("container")} style={{ padding: 0 }}>

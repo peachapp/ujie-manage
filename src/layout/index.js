@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import { Layout as LayoutAnt } from "antd";
+import { useRecoilState } from "recoil";
+import { collapsedStore } from "store";
 import { intoFullScreen, autoPrefix } from "utils";
 import Header from "./header";
 import Sidebar from "./sidebar/index";
@@ -9,15 +11,26 @@ const cx = autoPrefix(styles.prefix);
 
 const Layout = (props) => {
   const contentRef = useRef(null);
-  console.log("Layout");
+
+  const [collapsed, setCollapsed] = useRecoilState(collapsedStore);
+  const onCollapsedChange = () => {
+    setCollapsed(!collapsed);
+  };
 
   const onFullScreenOpen = () => {
     intoFullScreen(contentRef.current);
   };
 
   return (
-    <LayoutAnt id="Layout" className={cx("container")}>
-      <Header onFullScreenOpen={onFullScreenOpen} />
+    <LayoutAnt
+      id="Layout"
+      className={`${cx("container")} ${collapsed && cx("container-collapsed")}`}
+    >
+      <Header
+        collapsed={collapsed}
+        onCollapsedChange={onCollapsedChange}
+        onFullScreenOpen={onFullScreenOpen}
+      />
       <LayoutAnt>
         <Sidebar />
         <LayoutAnt.Content
