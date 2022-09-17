@@ -1,12 +1,12 @@
 export const menuListAll = [
   {
     parentId: "/",
-    id: "home",
-    path: "/home",
+    id: "workbench",
+    path: "/workbench",
     redirect: "",
-    elementPath: "views/home",
+    elementPath: "views/workbench",
     meta: {
-      title: "首页",
+      title: "工作台",
       icon: "HomeOutlined",
       auth: "",
       isMenu: true,

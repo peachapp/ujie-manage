@@ -10,7 +10,7 @@ import styles from "./index.less";
 const cx = autoPrefix(styles.prefix);
 
 const menuData = [
-  { key: "home", title: "首页", path: "/home", icon: <HomeOutlined /> },
+  { key: "workbench", title: "工作台", path: "/workbench", icon: <HomeOutlined /> },
   {
     key: "aboutAuthor",
     title: "关于作者",
@@ -30,7 +30,7 @@ const Sidebar = () => {
       (menuData || []).find(
         (menuDataItem) => menuDataItem.path === location.pathname
       ) || {}
-    ).key || "home";
+    ).key || "workbench";
 
   const [selectedKeys, setSelectedKeys] = useState([currentPathKey]);
 

@@ -1,0 +1,123 @@
+@import "assets/variable.less";
+
+@prefix: workbench;
+
+// header
+.@{prefix}-header {
+  height: 84px;
+  padding: @padding-base;
+  background-color: #fff;
+}
+
+.@{prefix}-user {
+  display: flex;
+  align-items: center;
+}
+
+.@{prefix}-avatar {
+  margin-right: @margin-lg;
+}
+
+.@{prefix}-greetting {
+  font-size: @font-size-lg;
+  color: @color-dark;
+  font-weight: 600;
+}
+
+.@{prefix}-worklist {
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.@{prefix}-workitem {
+  width: 100px;
+  text-align: right;
+}
+
+.@{prefix}-workitem-name {
+  color: @color-light;
+}
+
+.@{prefix}-workitem-value {
+  font-size: @font-size-lg;
+  color: @color-dark;
+}
+
+.@{prefix}-content {
+  display: flex;
+  padding: @padding-base;
+}
+
+.@{prefix}-left {
+  width: 68%;
+}
+
+.@{prefix}-right {
+  width: 32%;
+}
+
+.@{prefix}-space-vertical {
+  height: @padding-base;
+}
+
+.@{prefix}-space {
+  width: @padding-base;
+}
+
+// 项目
+.@{prefix}-proitem-name {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: @margin-base;
+    color: @color-dark;
+  }
+}
+
+.@{prefix}-proitem-text {
+  margin-top: @margin-base;
+  color: @color-light;
+}
+
+.@{prefix}-proitem-info {
+  margin-top: @margin-lg;
+  color: @color-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 最新动态
+.@{prefix}-trendsitem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.@{prefix}-trendsitem-avatar {
+  margin-right: @margin-lg;
+}
+
+.@{prefix}-trendsitem-date {
+  color: @color-light;
+}
+
+// 快捷导航
+.@{prefix}-navitem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    margin-top: @margin-sm;
+    color: @color-dark;
+  }
+}
+
+:export {
+  prefix: @prefix;
+}
