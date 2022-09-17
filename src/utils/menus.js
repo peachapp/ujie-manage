@@ -1,10 +1,10 @@
 export const menuListAll = [
   {
     parentId: "/",
-    id: "workbench",
-    path: "/workbench",
+    id: "dashboard/workbench",
+    path: "/dashboard/workbench",
     redirect: "",
-    elementPath: "views/workbench",
+    elementPath: "views/dashboard/workbench",
     meta: {
       title: "工作台",
       icon: "HomeOutlined",

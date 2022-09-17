@@ -1,7 +1,7 @@
 import React, { lazy } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 import Layout from "layout";
-// const Workbench = lazy(() => import("views/workbench"));
+// const Workbench = lazy(() => import("views/dashboard/workbench"));
 const Login = lazy(() => import("views/login"));
 const Test = lazy(() => import("views/test"));
 const AboutAuthor = lazy(() => import("views/about/aboutAuthor"));
@@ -16,7 +16,7 @@ const routes = [
   {
     id: "/",
     path: "/",
-    redirect: "/workbench",
+    redirect: "/dashboard/workbench",
     element: (
       <Layout>
         <Outlet />
@@ -24,7 +24,7 @@ const routes = [
     ),
     children: [
       // {
-      //   path: "/workbench",
+      //   path: "/dashboard/workbench",
       //   element: <Workbench />,
       //   meta: {
       //     title: "首页",
