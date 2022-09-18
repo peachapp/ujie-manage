@@ -4,46 +4,14 @@ import { Icon } from "@iconify-icon/react";
 import * as echarts from "echarts";
 import scheduleImg from "assets/images/schedule.png";
 // relative
-import { autoPrefix } from "utils";
+import { autoPrefix, salesStatisticsOption } from "utils";
 import styles from "./index.less";
 
 const cx = autoPrefix(styles.prefix);
 
 function Workbench() {
   useEffect(() => {
-    let option = {
-      grid: {
-        left: "40px",
-      },
-      tooltip: {
-        trigger: "axis",
-        axisPointer: {
-          type: "shadow",
-        },
-      },
-      legend: {
-        data: ["浏览量", "销售额"],
-      },
-      xAxis: {
-        type: "category",
-        data: ["2017", "2018", "2019", "2020", "2021", "2022"],
-      },
-      yAxis: {
-        type: "value",
-      },
-      series: [
-        {
-          name: "浏览量",
-          type: "bar",
-          data: [8976, 7459, 6004, 12973, 9863, 5443],
-        },
-        {
-          name: "销售额",
-          type: "bar",
-          data: [10976, 8456, 6759, 7673, 11232, 6756],
-        },
-      ],
-    };
+    let option = salesStatisticsOption;
     const chartEle = echarts.init(document.getElementById("CensusChart"));
     chartEle.setOption(option);
   }, []);
@@ -51,7 +19,7 @@ function Workbench() {
   return (
     <div id="Workbench" className={cx("container")}>
       <div className={cx("header")}>
-        <Row>
+        <Row gutter={12}>
           <Col span={12}>
             <div className={cx("user")}>
               <Avatar

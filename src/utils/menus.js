@@ -14,6 +14,21 @@ export const menuListAll = [
       lock: false,
     },
   },
+  {
+    parentId: "/",
+    id: "dashboard/analysis",
+    path: "/dashboard/analysis",
+    redirect: "",
+    elementPath: "views/dashboard/analysis",
+    meta: {
+      title: "分析页",
+      icon: "HomeOutlined",
+      auth: "",
+      isMenu: true,
+      isShow: true,
+      lock: false,
+    },
+  },
 ];
 
 export const findMenusByParentId = (list, parentId) => {

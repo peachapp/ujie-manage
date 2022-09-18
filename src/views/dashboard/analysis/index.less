@@ -1,0 +1,51 @@
+@import "assets/variable.less";
+
+@prefix: analysis;
+
+.@{prefix}-container {
+  padding: @padding-base;
+}
+
+// statistics
+.@{prefix}-statisticsitem {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.@{prefix}-statisticsitem-value,
+.@{prefix}-statisticsitem-value-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.@{prefix}-statisticsitem-value span {
+  font-size: @font-size-suplg;
+  color: @color-dark;
+  font-weight: 600;
+}
+
+.@{prefix}-statisticsitem-img {
+  width: 32px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.@{prefix}-statisticsitem-value-total {
+  margin-top: @margin-lg;
+}
+
+.@{prefix}-space-vertical {
+  height: @padding-base;
+}
+
+.@{prefix}-space {
+  width: @padding-base;
+}
+
+:export {
+  prefix: @prefix;
+}

@@ -11,6 +11,10 @@ function App() {
 
   const menus = useRecoilValue(menusStore);
 
+  useEffect(() => {
+    console.log("menus change");
+  }, [menus]);
+
   menus.forEach((item) => {
     const UnknownEle = lazy(() => import(`${item.elementPath}`));
     routerList[0].children.push({
