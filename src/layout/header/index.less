@@ -21,22 +21,32 @@
 }
 
 .@{prefix}-control-icon {
-  font-size: 24px;
-  color: #909399 !important;
+  color: #999;
+  &:hover {
+    color: #fff;
+  }
 }
 
-.@{prefix}-control:hover .@{prefix}-control-icon {
-  color: #fff !important;
+.@{prefix}-right {
+  display: flex;
+}
+
+.@{prefix}-user {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  & > span {
+    margin-left: 12px;
+    color: #fff;
+  }
 }
 
 .@{prefix}-screen {
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-}
-
-.@{prefix}-screen-icon {
-  margin: 20px;
-  font-size: 24px;
-  color: #909399 !important;
 }
 
 :export {

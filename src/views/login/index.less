@@ -1,0 +1,39 @@
+@import "assets/variable.less";
+
+@prefix: login;
+
+.@{prefix}-container {
+  height: 100%;
+}
+
+.@{prefix}-flex-center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.@{prefix}-content {
+  height: 100%;
+  padding-top: 10%;
+  padding-left: 12%;
+}
+
+.@{prefix}-other {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.@{prefix}-other-icon {
+  cursor: pointer;
+  color: @color-light;
+  &:hover {
+    color: @color-primary;
+  }
+}
+
+:export {
+  prefix: @prefix;
+}
