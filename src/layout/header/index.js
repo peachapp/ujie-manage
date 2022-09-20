@@ -1,56 +1,64 @@
 import React from "react";
-import { Layout, Dropdown, Menu, Avatar } from "antd";
+import { useNavigate } from "react-router-dom";
+import { Layout, Dropdown, Menu, Avatar, Modal } from "antd";
 import { Icon } from "@iconify-icon/react";
 import { isFullScreenAvailable, autoPrefix } from "utils";
 import styles from "./index.less";
 
 const cx = autoPrefix(styles.prefix);
 
-const menu = (
-  <Menu
-    items={[
-      {
-        key: "1",
-        label: (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.antgroup.com"
-          >
-            1st menu item
-          </a>
-        ),
-      },
-      {
-        key: "2",
-        label: (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.aliyun.com"
-          >
-            2nd menu item
-          </a>
-        ),
-      },
-      {
-        key: "3",
-        label: (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.luohanacademy.com"
-          >
-            3rd menu item
-          </a>
-        ),
-      },
-    ]}
-  />
-);
-
 const Header = (props) => {
   const { collapsed, onCollapsedChange, onFullScreenOpen } = props;
+  const navigate = useNavigate();
+  const [modal, contextHolder] = Modal.useModal();
+
+  const onBeforeLogout = () => {
+    modal.confirm({
+      title: "温馨提醒",
+      content: "是否确认退出系统?",
+      okText: "确定",
+      cancelText: "取消",
+      centered: true,
+      onOk: () => {
+        navigate("/login");
+        console.log("确认退出登录");
+      },
+    });
+  };
+
+  const menu = (
+    <Menu
+      items={[
+        {
+          key: "personal",
+          label: (
+            <div className={cx("menuitem")}>
+              <Icon icon="bxs:user-detail" width={20} />
+              <span>个人中心</span>
+            </div>
+          ),
+        },
+        {
+          key: "lock",
+          label: (
+            <div className={cx("menuitem")}>
+              <Icon icon="ant-design:lock-filled" width={20} />
+              <span>锁定屏幕</span>
+            </div>
+          ),
+        },
+        {
+          key: "logout",
+          label: (
+            <div className={cx("menuitem")} onClick={onBeforeLogout}>
+              <Icon icon="ant-design:logout-outlined" width={20} />
+              <span>退出系统</span>
+            </div>
+          ),
+        },
+      ]}
+    />
+  );
 
   return (
     <Layout.Header className={cx("container")} style={{ padding: 0 }}>
@@ -70,7 +78,7 @@ const Header = (props) => {
         )}
       </div>
       <div className={cx("right")}>
-        <Dropdown overlay={menu} placement="bottomLeft">
+        <Dropdown overlay={menu} placement="bottom">
           <div className={cx("user")}>
             <Avatar
               className={cx("avatar")}
@@ -90,6 +98,8 @@ const Header = (props) => {
           </div>
         ) : null}
       </div>
+
+      {contextHolder}
     </Layout.Header>
   );
 };

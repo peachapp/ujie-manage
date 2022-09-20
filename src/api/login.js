@@ -2,10 +2,19 @@ import service from "./axios";
 // const urlPrefix = `/api`;
 const urlPrefix = ``;
 
-// 用户登录
+// 用户登录(账号密码)
 export const signIn = (data) => {
   return service({
     url: `${urlPrefix}/user/signIn`,
+    method: "post",
+    data,
+  });
+};
+
+// 用户退出登录
+export const signOut = (data) => {
+  return service({
+    url: `${urlPrefix}/user/signOut`,
     method: "post",
     data,
   });
