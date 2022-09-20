@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Layout, Dropdown, Menu, Avatar, Modal } from "antd";
+import { Layout, Dropdown, Menu, Avatar, Modal, Button } from "antd";
 import { Icon } from "@iconify-icon/react";
-import { isFullScreenAvailable, autoPrefix } from "utils";
+import { isFullScreenAvailable, autoPrefix, exportPDF } from "utils";
 import styles from "./index.less";
 
 const cx = autoPrefix(styles.prefix);
@@ -60,6 +60,10 @@ const Header = (props) => {
     />
   );
 
+  const onExportPDF = () => {
+    exportPDF("测试导出PDF", document.getElementById("LayContent"));
+  };
+
   return (
     <Layout.Header className={cx("container")} style={{ padding: 0 }}>
       <div className={cx("control")} onClick={onCollapsedChange}>
@@ -78,6 +82,9 @@ const Header = (props) => {
         )}
       </div>
       <div className={cx("right")}>
+        <Button type="link" onClick={onExportPDF}>
+          导出
+        </Button>
         <Dropdown overlay={menu} placement="bottom">
           <div className={cx("user")}>
             <Avatar

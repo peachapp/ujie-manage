@@ -17,6 +17,8 @@ import {
   dealRatioOption,
 } from "./echartOptions";
 
+import { exportPDF } from "./exportPDF";
+
 export {
   isFullScreenAvailable,
   intoFullScreen,
@@ -29,4 +31,5 @@ export {
   conversionRateOption,
   accessSourceOption,
   dealRatioOption,
+  exportPDF,
 };

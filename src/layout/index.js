@@ -38,7 +38,7 @@ const Layout = (props) => {
             minHeight: 280,
           }}
         >
-          <div className={cx("content")} ref={contentRef}>
+          <div id="LayContent" className={cx("content")} ref={contentRef}>
             {props.children}
           </div>
         </LayoutAnt.Content>
