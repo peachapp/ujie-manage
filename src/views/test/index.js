@@ -4,20 +4,53 @@ import PassInput from "components/passInput";
 import Qrcode from "components/qrcode";
 import PropTypes from "prop-types";
 
-class Iex extends React.Component {
+class Demo1 extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    };
+  }
+  onClick() {
+    this.setState({ count: this.state.count + 1 });
+    setTimeout(() => {
+      console.log("class count：", this.state.count);
+    });
+  }
   render() {
-    return <div>Iex</div>;
+    return (
+      <div>
+        class count: {this.state.count}
+        <button onClick={this.onClick.bind(this)}>class count +1</button>
+      </div>
+    );
   }
 }
-Iex.propTypes = {
-  str: PropTypes.string.isRequired,
-};
+// Demo1.propTypes = {
+//   str: PropTypes.string.isRequired,
+// };
+
+function Demo2() {
+  const [count, setCount] = useState(0);
+  const onClick = () => {
+    setCount(count + 1);
+    setTimeout(() => {
+      console.log("function count：", count);
+    });
+  };
+  return (
+    <div>
+      function count: {count}
+      <button onClick={onClick}>function count +1</button>
+    </div>
+  );
+}
 
 function Test() {
   const fn = async () => {
     const res = await signIn();
     const res2 = await getUser();
-    console.log("res", res, res2);
+    // console.log("res", res, res2);
   };
   useEffect(() => {
     fn();
@@ -26,7 +59,8 @@ function Test() {
   return (
     <div id="Test" className="test-container">
       test
-      <Iex />
+      <Demo1 />
+      <Demo2 />
       <PassInput width="280px" value={a} onChange={(v) => setA(v)} />
       <Qrcode value={a} timeout="dddd" refresh={() => setA(a + "1")} />
     </div>

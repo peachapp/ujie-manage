@@ -16,14 +16,11 @@ function App() {
   }, [menus]);
 
   menus.forEach((item) => {
-    const UnknownEle = lazy(() => import(`${item.elementPath}`));
+    const Ele = lazy(() => import(`${item.elementPath}`));
     routerList[0].children.push({
       path: item.path,
-      element: <UnknownEle />,
-      meta: {
-        title: item.meta.title,
-        auth: item.meta.auth,
-      },
+      element: <Ele />,
+      meta: item.meta,
     });
   });
 

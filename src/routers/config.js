@@ -2,8 +2,9 @@ import React, { lazy } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 import Layout from "layout";
 const Login = lazy(() => import("views/login"));
-const Test = lazy(() => import("views/test"));
 const AboutAuthor = lazy(() => import("views/about/aboutAuthor"));
+const Responsive = lazy(() => import("views/test/responsive"));
+const Test = lazy(() => import("views/test"));
 
 // 静态页
 const Page403 = lazy(() => import("views/static/page403"));
@@ -38,6 +39,15 @@ const routes = [
     element: <AboutAuthor />,
     meta: {
       title: "关于作者",
+      auth: false,
+    },
+  },
+  {
+    id: "xys",
+    path: "/xys",
+    element: <Responsive />,
+    meta: {
+      title: "响应式",
       auth: false,
     },
   },
