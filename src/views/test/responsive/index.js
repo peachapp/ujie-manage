@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Menu } from "antd";
 import { Icon } from "@iconify-icon/react";
 import logo from "./images/logo.png";
@@ -14,7 +14,7 @@ import "./style/medium.less";
 import "./style/small.less";
 import "./style/mini.less";
 
-const menuItems = [
+const vMenus = [
   {
     label: "",
     key: "menu",
@@ -51,6 +51,8 @@ const menuItems = [
 ];
 
 function Responsive() {
+  const [menuItems] = useState(vMenus);
+
   return (
     <div id="Responsive" className="responsive-container">
       <div className="part1">
