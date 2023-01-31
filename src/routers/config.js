@@ -33,15 +33,15 @@ const routes = [
       auth: false,
     },
   },
-  {
-    id: "aboutAuthor",
-    path: "/aboutAuthor",
-    element: <AboutAuthor />,
-    meta: {
-      title: "关于作者",
-      auth: false,
-    },
-  },
+  // {
+  //   id: "aboutAuthor",
+  //   path: "/aboutAuthor",
+  //   element: <AboutAuthor />,
+  //   meta: {
+  //     title: "关于作者",
+  //     auth: false,
+  //   },
+  // },
   {
     id: "xys",
     path: "/xys",
