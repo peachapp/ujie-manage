@@ -28,12 +28,12 @@ const menuData = [
       },
     ],
   },
-  {
-    key: "aboutAuthor",
-    title: "关于作者",
-    path: "/aboutAuthor",
-    icon: "icon-park-outline:me",
-  },
+  // {
+  //   key: "aboutAuthor",
+  //   title: "关于作者",
+  //   path: "/aboutAuthor",
+  //   icon: "icon-park-outline:me",
+  // },
   // { key: '404', title: '404', path: '', icon: '' },
 ];
 
