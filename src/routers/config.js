@@ -3,7 +3,6 @@ import { Outlet, Navigate } from "react-router-dom";
 import Layout from "layout";
 const Login = lazy(() => import("views/login"));
 const AboutAuthor = lazy(() => import("views/about/aboutAuthor"));
-const Responsive = lazy(() => import("views/test/responsive"));
 const Test = lazy(() => import("views/test"));
 
 // 静态页
@@ -42,15 +41,6 @@ const routes = [
   //     auth: false,
   //   },
   // },
-  {
-    id: "xys",
-    path: "/xys",
-    element: <Responsive />,
-    meta: {
-      title: "响应式",
-      auth: false,
-    },
-  },
   {
     id: "test",
     path: "/test",

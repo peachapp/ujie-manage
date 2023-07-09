@@ -2,20 +2,20 @@
 
 .@{prefix}-container {
   padding-top: 64px; /* Header height: 64px */
-  padding-left: 210px; /* Sidebar width: 210px */
   height: 100%;
   transition: padding 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
   // transition: all 0.5s;
 }
 
-.@{prefix}-container-collapsed {
-  padding-left: 64px;
+.content-wrap {
+  height: calc(100% - 64px); /* Header height: 64px */
 }
 
 .@{prefix}-content {
   width: 100%;
-  // height: 100%;
+  height: 100%;
   background-color: #f0f2f5;
+  overflow-y: auto;
   // overflow-y: auto;  /* html2canvas完整截图，依据body滚动 */
 }
 

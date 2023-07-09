@@ -31,7 +31,7 @@ const Layout = (props) => {
         onCollapsedChange={onCollapsedChange}
         onFullScreenOpen={onFullScreenOpen}
       />
-      <LayoutAnt>
+      <LayoutAnt className={cx("content-wrap")}>
         <Sidebar />
         <LayoutAnt.Content
           style={{
