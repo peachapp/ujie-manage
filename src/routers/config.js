@@ -4,6 +4,7 @@ import Layout from "layout";
 const Login = lazy(() => import("views/login"));
 const AboutAuthor = lazy(() => import("views/about/aboutAuthor"));
 const Test = lazy(() => import("views/test"));
+const Example = lazy(() => import("views/example"));
 
 // 静态页
 const Page403 = lazy(() => import("views/static/page403"));
@@ -47,6 +48,15 @@ const routes = [
     element: <Test />,
     meta: {
       title: "测试",
+      auth: false,
+    },
+  },
+  {
+    id: "example",
+    path: "/example",
+    element: <Example />,
+    meta: {
+      title: "举个例子",
       auth: false,
     },
   },
